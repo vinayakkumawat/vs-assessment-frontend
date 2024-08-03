@@ -24,7 +24,6 @@ export const SubmitButton = () => {
                 nodes: nodes.map(node => ({ id: node.id })),
                 edges: edges.map(edge => ({ source: edge.source, target: edge.target }))
             }
-            console.log('Sending pipeline data:', pipeline);
             const response = await axios.post('http://localhost:8000/pipelines/parse', pipeline, {
                 headers: {
                     'Content-Type': 'application/json'
